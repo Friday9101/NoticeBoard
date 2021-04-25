@@ -1,0 +1,66 @@
+﻿@model IEnumerable<NoticeBoard.Models.UserModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+
+<table border="2">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.zmatricNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zpassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zfirstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zlastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zdepartment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zclass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zsex)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.zmatricNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zpassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zfirstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zlastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zdepartment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zclass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zsex)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

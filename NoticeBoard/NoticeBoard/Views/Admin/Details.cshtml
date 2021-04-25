@@ -1,0 +1,39 @@
+﻿@model NoticeBoard.Models.NoticeModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+
+
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NoticeModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title_ns)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title_ns)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_ns)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_ns)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date_ns)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_ns)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Noticlist")
+</p>

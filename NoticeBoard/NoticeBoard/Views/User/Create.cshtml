@@ -1,0 +1,81 @@
+﻿@model NoticeBoard.Models.UserModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<h2>@*CREATE USER*@</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend> <H1>CREATE USER</H1></legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zmatricNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zmatricNumber)
+            @Html.ValidationMessageFor(model => model.zmatricNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zpassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zpassword)
+            @Html.ValidationMessageFor(model => model.zpassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zfirstname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zfirstname)
+            @Html.ValidationMessageFor(model => model.zfirstname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zlastname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zlastname)
+            @Html.ValidationMessageFor(model => model.zlastname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zdepartment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zdepartment)
+            @Html.ValidationMessageFor(model => model.zdepartment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zclass)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zclass)
+            @Html.ValidationMessageFor(model => model.zclass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zsex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zsex)
+            @Html.ValidationMessageFor(model => model.zsex)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

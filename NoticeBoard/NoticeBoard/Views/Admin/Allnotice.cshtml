@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NoticeBoard.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "Allnotice";
+
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+
+}
+
+<h2>All NEWS </h2>
+
+
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title_ns)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message_ns)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_ns)
+        </th>
+    </tr> 
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title_ns)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_ns)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_ns)
+        </td>
+
+    </tr>
+}
+
+</table>

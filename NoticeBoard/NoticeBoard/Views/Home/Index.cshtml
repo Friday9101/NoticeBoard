@@ -1,0 +1,121 @@
+﻿@model IEnumerable<NoticeBoard.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/HOME_LayOut.cshtml";
+}
+<h2>
+    @ViewBag.datez2
+
+</h2>
+
+<!-- ======= Skills Section ======= -->
+<section id="skills" class="skills">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+            @*<div class="content">*@
+            <div class="col-lg-12 d-flex content align-items-center">
+                <div class="col-lg-1 "></div>
+                <div class="col-lg-11 ">
+                    <h3><strong>LATEST NEWS</strong></h3>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                <img src="~/assets/img/skills.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                <h3>@ViewBag.titlez</h3>
+                <p class="font-italic">
+                    @ViewBag.messagez 
+                </p>
+
+                <div class="skills-content">
+
+                    <div class="progress">
+                        <span class="skill">@ViewBag.timez <i class="val">@ViewBag.datez</i></span>
+
+                        <div class="comments row">
+
+
+                            <div class="col-sm-4">
+                                <input type="submit" style="height:25px; color:white; background:blue" class="btn-react" id="likee3" value="LIKES" />
+                                : <span id="likee"> 0 </span>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="submit" style="height:25px; color:white;  background:grey" class="btn-react" id="VIEW1" value="VIEW" />
+                                : <span id="VIEW2"> 0 </span>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="submit" style="height:25px; color:white;  background:red" class="btn-react" id="DISLIKE1" value="DISLIKES" />
+                                : <span id="DISLIKE2"> 0 </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Skills Section -->
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                <div class="content">
+                    <h3><strong>ALL NEWS</strong></h3>
+                    <p>
+                        NEWS LESS THAN 24hrs AGO
+                    </p>
+                </div>
+                @{
+                    int countz = 0;
+                    foreach (var item in Model)
+                    {
+                        countz++;
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li>
+                                    <a data-toggle="collapse" class="collapse" href="#accordion-list-@item.ID">
+                                        <span>@countz </span>@item.Title_ns <i class="bx bx-chevron-down icon-show"></i>
+                                        <i class="bx bx-chevron-up icon-close"></i>
+                                    </a>
+                                    <div id="accordion-list-@item.ID" class="collapse" data-parent=".accordion-list">
+                                        <p>
+                                            @item.Message_ns @*<span>@Html.ActionLink("Read More", "Details", new { id = item.ID })</span>*@
+                                        </p>
+                                    </div>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+
+
+                    }}
+            </div>
+
+            <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150">
+                &nbsp;
+                <img src="~/assets/img/why-us.png" class="img-fluid" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Why Us Section -->

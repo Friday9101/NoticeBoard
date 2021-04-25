@@ -1,0 +1,82 @@
+﻿@model NoticeBoard.Models.NoticeModel
+
+@{
+    ViewBag.Title = "Create";
+
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                CREATE ADMIN@*<span class="btn-success" >  @Model.Title_ns   </span>*@ 
+            </header>
+            <div class="panel-body">                 
+                 
+
+                @using (Html.BeginForm("Create", "ADMIN", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+
+
+                    
+                        <div class="form-group">
+                        <label class="col-sm-2 control-label">@Html.LabelFor(model => model.Title_ns)</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Title_ns"  id ="Title_ns" class="form-control">
+                        </div>
+                        <div>@Html.ValidationMessageFor(model => model.Title_ns)  </div>
+                    </div>
+
+                    <br /> <br />
+                    
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">@Html.LabelFor(model => model.Message_ns)</label>
+                        <div class="col-sm-10">
+
+                            <textarea rows="10" name="Message_ns" id="Message_ns" class="form-control">  </textarea>
+
+                        </div>
+                        <div>@Html.ValidationMessageFor(model => model.Message_ns)   </div>
+                    </div>
+
+                       <br /> <br />   <br /> <br />
+
+
+                    <div class="form-group">
+                        <div><h1></h1></div>
+                        <div class="col-sm-2 control-label"> </div>
+                        
+                        
+                        <div class="col-sm-9 control-label">  @Html.ActionLink("Back to List", "EditList", "admin")</div>
+                        <p>
+                            <button type="submit" class="btn btn-success">CREATE</button>
+                        </p>
+
+
+                    </div>
+
+
+
+                }
+
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

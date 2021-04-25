@@ -1,0 +1,45 @@
+﻿@model NoticeBoard.Models.NoticeModel
+
+@{
+    ViewBag.Title = "Details";
+
+    Layout = "~/Views/Shared/HOME_LayOut.cshtml";
+}
+
+
+    <div>
+        <h4>NoticeModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title_ns)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title_ns)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Message_ns)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Message_ns)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Date_ns)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Date_ns)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+                @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+

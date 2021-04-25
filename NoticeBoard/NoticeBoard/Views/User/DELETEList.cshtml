@@ -1,0 +1,30 @@
+﻿@model IEnumerable<NoticeBoard.Models.UserModel>
+
+@{
+    ViewBag.Title = "DELETEList";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayName("NAME")
+        </th>
+
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            
+            @Html.ActionLink(item.zfirstname + " "+ item.zlastname, "Delete", new { id=item.ID }) 
+
+        </td>
+
+    </tr>
+}
+
+</table>

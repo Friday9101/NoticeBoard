@@ -1,0 +1,49 @@
+﻿@model IEnumerable<NoticeBoard.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "DELETEList";
+
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+
+}
+<a href="~/Views/Shared/Admin_LayOut.cshtml">~/Views/Shared/Admin_LayOut.cshtml</a>
+
+<div class="container">
+
+
+
+    <h2>WHAT DO YOU WANT TO DELETE</h2>
+
+    <div class="row">
+
+
+
+
+        <div class="col-lg-3">
+
+
+            <table>
+                <tr>
+                    <th>LIST OF ALL NEWS
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+
+                            @Html.ActionLink(item.Title_ns, "delete", new { id = item.ID })
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+
+
+    </div>
+</div>

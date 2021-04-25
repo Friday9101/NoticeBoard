@@ -1,0 +1,64 @@
+﻿@model NoticeBoard.Models.UserModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zmatricNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zmatricNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zpassword)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zpassword)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zfirstname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zfirstname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zlastname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zlastname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zdepartment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zdepartment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zclass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zclass)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zsex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zsex)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Detaillist","user")
+</p>
